@@ -7,12 +7,19 @@ import matplotlib.pyplot as plot
 def differentiable_function(x):
     function = (x[0])**3
     return function
-#np.sin(x[0]) * np.exp((1 - np.cos(x[1])) ** 2) + \
-           #np.cos(x[1]) * np.exp((1 - np.sin(x[0])) ** 2) + (x[0] - x[1]) ** 2
-
 
 
 def gradient(x, dx):
+     """
+    Вычисляет численный градиент функции differentiable_function в точке x с шагом dx.
+
+    Параметры:
+    x: list, tuple - точка, в которой вычисляется градиент.
+    dx: float - шаг, с которым вычисляется градиент.
+
+    Возвращает:
+    grad: list - значение градиента в точке x.
+    """
     grad = []
     for i in range(len(x)):
         a = x.copy()
