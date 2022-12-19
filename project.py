@@ -17,7 +17,7 @@ def differentiable_function(x: list) -> float:
     return function
 
 
-def gradient(x, dx):
+def gradient(x: list, dx: float) -> list:
      """
        Вычисляет численный градиент функции differentiable_function в точке x с приращением аргумента dx.
 
