@@ -85,7 +85,7 @@ def gradient_search(x0: list, dx: float, center: list, radius: float, extr_type:
 
 
 def silvestr_criterion(x0: list, dx=0.0001, epsilon = 0.001) -> str:
-    '''
+    """
         Критерий Сильвестра - функция определяет, является ли точка x0 локальным минимумом, максимумом или ни тем, ни другим (т.е. не экстремумом) для данной функции f(x).
         Функция работает путем первого вычисления матрицы Гессиана f (x) в точке x0. Матрица Гессиана - это квадратная матрица частных производных функции второго порядка, и ее можно использовать
         для определения локальной кривизны функции в данной точке. Матрица Гессиана вычисляется с использованием функции derivative_2(), которая, как предполагается, определена в другом месте.
@@ -99,7 +99,7 @@ def silvestr_criterion(x0: list, dx=0.0001, epsilon = 0.001) -> str:
         :type epsilon: float
         :rtype: str
         :return: сообщение, является ли точка максимумом, минимумом или не является экстремумом вовсе: 'min', 'max', 'Not an extremum'
-    '''
+    """
   A = derivative_2(x0, dx)
   if len(A)==1:
     if abs(A[0][0])<epsilon:
@@ -136,7 +136,15 @@ def silvestr_criterion(x0: list, dx=0.0001, epsilon = 0.001) -> str:
 
 
 
-def get_grid(grid_step):
+def get_grid(grid_step: float) -> list:
+    """
+        Функция создает сетку, на которой будет построен график
+    
+        :param grid_step: arg1 - шаг между точками для построения граффика по осям координат
+        :type grid_step: float
+        :rtupe: list
+        :return: массив точек для построения графика, отложенных по осям координат
+    """
     samples = np.arange(-radius, radius, grid_step)
     Ox, Oy = np.meshgrid(samples, samples)
     return Ox, Oy, differentiable_function([Ox,Oy])
