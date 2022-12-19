@@ -5,20 +5,29 @@ import matplotlib.pyplot as plot
 
 
 def differentiable_function(x):
+    """
+       Эта функция вычисляет значение функции f(x) в точке x.
+
+      :param x: arg1 - список аргументов для вычисления значения функции.
+      :type x: list
+      :rtype: float
+      :return: function - значение функции в точке x.
+    """
     function = (x[0])**3
     return function
 
 
 def gradient(x, dx):
      """
-    Вычисляет численный градиент функции differentiable_function в точке x с шагом dx.
+       Вычисляет численный градиент функции differentiable_function в точке x с приращением аргумента dx.
 
-    Параметры:
-    x: list, tuple - точка, в которой вычисляется градиент.
-    dx: float - шаг, с которым вычисляется градиент.
+       :param x: arg1 - точка, в которой вычисляется градиент.
+       :type x: list
+       :param dx: arg2 - приращение аргумента, с которым вычисляется градиент.
+       :type dx: float
+       :rtype: list
+       :return: grad - значение градиента в точке x.
 
-    Возвращает:
-    grad: list - значение градиента в точке x.
     """
     grad = []
     for i in range(len(x)):
