@@ -4,7 +4,7 @@ import matplotlib.pyplot as plot
 
 
 
-def differentiable_function(x):
+def differentiable_function(x: list) -> float:
     """
        Эта функция вычисляет значение функции f(x) в точке x.
 
