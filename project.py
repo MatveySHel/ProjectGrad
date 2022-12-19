@@ -150,8 +150,17 @@ def get_grid(grid_step: float) -> list:
     return Ox, Oy, differentiable_function([Ox,Oy])
 
 
-
-def draw_chart(points, grid):
+def draw_chart(points: list, grid: list) -> plt:
+    """
+        Функция для построения графика функции и найденых экстремумов
+    
+        :param points: arg1 - массив с координатами точек экстремума для нанесения на график
+        :type pionts: list
+        :param grid: arg2 - массив точек для построения графика, отложенных по осям координат
+        :type grid: list
+        :rtupe: plt
+        :return: график
+    """
     grid_x, grid_y, grid_z = grid
     plot.rcParams.update({
         'figure.figsize': (4, 4),
