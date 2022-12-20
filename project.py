@@ -177,7 +177,7 @@ def draw_chart(points: list, grid: list) -> plt:
 
 
 def derivative_2(x: list, dx: float) -> list:
-    '''
+    """
     Функция вычисляет матрицы вторых частных производных и смешанных частных производных в точке x
 
     :param x: arg1 - координаты точки, для которой расчитывается Гессиан
@@ -186,7 +186,7 @@ def derivative_2(x: list, dx: float) -> list:
     :type dx: float
     :rtype: list
     :return: матрица 2 частных производных функции в точке x
-    '''
+    """
     gesse = []
     for i in range(len(x)):
         a = x.copy()
